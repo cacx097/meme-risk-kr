@@ -13,10 +13,11 @@
 - 봇 토큰은 프로젝트에 저장하지 않았다. 실행할 때 `TELEGRAM_BOT_TOKEN` 환경 변수로 넣는다.
 
 - 코드 공개: https://github.com/cacx097/meme-risk-kr (GitHub 계정은 항상 cacx097)
-- 서버: Railway Hobby(월 5달러)로 결정. 사용자 가입·결제 대기.
+- 서버: Railway Hobby(월 5달러, 사용 한도 5달러). 프로젝트 `meme-risk-kr`, 서비스 `bot`, 저장 공간 `/data`. `railway up --service bot`으로 올린다. 2026-11-10 배포 성공, 로그에 `bot: @MemeRiskKR_bot`.
+- PC에서 같은 봇 토큰으로 동시에 실행하지 않는다.
 
 ## 다음
-1. Railway에 배포한다 (README의 "서버에 올리기"). 웹은 공개 주소 없이 봇만 먼저 공개한다.
+1. 서버 봇이 실제로 답하는지, 그룹 자동 응답이 되는지 사용자 확인.
 2. Solana 어댑터 (블록 5).
 
 ## Project rules
