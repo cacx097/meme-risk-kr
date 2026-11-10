@@ -65,10 +65,11 @@ export const montra = {
     get<{ tokens: MontraToken[]; total: number }>(`/wallets/${wallet.toLowerCase()}/launches`),
   searchByName: (name: string) =>
     get<{ tokens: MontraToken[]; total: number }>(`/tokens?search=${encodeURIComponent(name)}&limit=50`),
-  list: (sort: "new" | "volume" | "graduated", limit = 50, stage?: string) =>
+  list: (sort: "new" | "trending" | "volume" | "graduated", limit = 50, stage?: string) =>
     get<{ tokens: MontraToken[]; total: number }>(
       `/tokens?sort=${sort}&limit=${limit}${stage ? `&stage=${stage}` : ""}`,
     ),
+  graduatedCount: () => get<{ total: number }>(`/tokens?limit=1&stage=graduated`).then((r) => r.total),
   stats: () =>
     get<{ tokensLaunched: number; launched24h: number; holders: number; volume24hUsd: number }>(`/stats`),
 };
