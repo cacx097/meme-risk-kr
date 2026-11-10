@@ -3,7 +3,7 @@ import { createServer, type Server } from "node:http";
 import { analyze, findAddress } from "./analyze.js";
 import { montra } from "./chains/montra.js";
 import { errorMessage } from "./bot.js";
-import { CHAIN_LABEL, DISCLAIMER, esc, usd } from "./format.js";
+import { CHAIN_LABEL, DISCLAIMER, esc, holders, usd } from "./format.js";
 import { isFailedLaunch, type Report } from "./score.js";
 import type { Store } from "./store.js";
 
@@ -29,26 +29,32 @@ code{font-size:.85em;word-break:break-all}table{width:100%;border-collapse:colla
 form{display:flex;gap:8px}input{flex:1;min-width:0;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:inherit}
 button{padding:10px 16px;border-radius:8px;border:0;background:var(--accent);color:#fff;font:inherit;font-weight:600}
 </style></head><body><main><p class="muted"><a href="/">← 홈</a> · <a href="/stats">통계</a> · <a href="/method">점수 계산 방법</a>${botUser ? ` · <a href="https://t.me/${esc(botUser)}">텔레그램 봇</a>` : ""}</p>
-${body}<p class="muted" style="margin-top:3em">${DISCLAIMER} 데이터 출처: Montra, RugCheck, DexScreener 공개 API.</p></main></body></html>`;
+${body}<p class="muted" style="margin-top:3em">${DISCLAIMER} 데이터 출처: Montra, RugCheck, GoPlus, Honeypot.is, DexScreener 공개 API.</p></main></body></html>`;
 }
 
-const search = `<form action="/t" method="get"><input name="q" placeholder="토큰 주소 (Elysium 0x... 또는 Solana)" aria-label="토큰 주소"><button>검사</button></form>`;
+const search = `<form action="/t" method="get"><input name="q" placeholder="토큰 주소 (Elysium·Base 0x... 또는 Solana)" aria-label="토큰 주소"><button>검사</button></form>`;
 
 export function reportHtml(r: Report): string {
   const [label, color] = LEVEL[r.level];
   const links =
     r.chain === "elysium"
       ? `<a href="/c/${r.token.creator}">개발자 이력 전체 보기</a> · <a href="https://dexscreener.com/elysium/${r.token.address}">DexScreener</a>`
-      : `<a href="https://rugcheck.xyz/tokens/${r.token.address}">RugCheck</a> · <a href="https://dexscreener.com/solana/${r.token.address}">DexScreener</a>`;
+      : r.chain === "solana"
+        ? `<a href="https://rugcheck.xyz/tokens/${r.token.address}">RugCheck</a> · <a href="https://dexscreener.com/solana/${r.token.address}">DexScreener</a>`
+        : `<a href="https://basescan.org/token/${r.token.address}">BaseScan</a> · <a href="https://dexscreener.com/base/${r.token.address}">DexScreener</a>`;
+  const history =
+    r.chain === "base"
+      ? "Base는 개발자의 다른 토큰 이력을 아직 제공하지 않습니다."
+      : `다른 토큰 ${r.creatorHistory.launches}개 · 실패 ${r.creatorHistory.failed}개${r.chain === "elysium" ? ` · 졸업 ${r.creatorHistory.graduated}개` : ""}`;
   return `<h1>${esc(r.token.name)} <span class="muted">$${esc(r.token.symbol)} · ${CHAIN_LABEL[r.chain]}</span></h1>
 <p class="muted"><code>${r.token.address}</code></p>
 <div class="card"><span class="badge" style="color:${color}">${label}</span> <b style="margin-left:8px">점수 ${r.score}/100</b>
 <div class="grid" style="margin-top:12px"><div><div class="muted">시가총액</div><div class="num">${usd(r.marketCapUsd)}</div></div>
 <div><div class="muted">24시간 거래</div><div class="num">${usd(r.volume24hUsd)}</div></div>
-<div><div class="muted">보유자</div><div class="num">${r.holders.toLocaleString()}</div></div>
-<div><div class="muted">생성</div><div class="num">${r.ageMinutes < 120 ? `${r.ageMinutes}분 전` : `${Math.round(r.ageMinutes / 60)}시간 전`}</div></div></div></div>
+<div><div class="muted">보유자</div><div class="num">${holders(r.holders)}</div></div>
+<div><div class="muted">생성</div><div class="num">${r.ageMinutes < 0 ? "모름" : r.ageMinutes < 120 ? `${r.ageMinutes}분 전` : `${Math.round(r.ageMinutes / 60)}시간 전`}</div></div></div></div>
 <h2>근거</h2><div class="card"><ul class="flags">${r.flags.map((f) => `<li>${SEV[f.severity]} ${esc(f.text)}</li>`).join("") || "<li>눈에 띄는 위험 신호가 없습니다.</li>"}</ul></div>
-<h2>개발자 지갑</h2><div class="card">다른 토큰 ${r.creatorHistory.launches}개 · 실패 ${r.creatorHistory.failed}개${r.chain === "elysium" ? ` · 졸업 ${r.creatorHistory.graduated}개` : ""}<br>${links}</div>`;
+<h2>개발자 지갑</h2><div class="card">${history}<br>${links}</div>`;
 }
 
 async function route(path: string, query: URLSearchParams, store: Store, botUser?: string): Promise<[number, string, string]> {
@@ -56,7 +62,7 @@ async function route(path: string, query: URLSearchParams, store: Store, botUser
 
   if (path === "/") {
     const s = await montra.stats().catch(() => null);
-    return html(`<h1>밈코인 위험 점수</h1><p>Elysium(Montra)과 Solana 토큰 주소를 넣으면 개발자 이력, 보유 쏠림, 수수료, 가짜 토큰 여부를 한국어로 요약합니다.</p>${search}
+    return html(`<h1>밈코인 위험 점수</h1><p>Elysium(Montra), Solana, Base 토큰 주소를 넣으면 개발자 이력, 보유 쏠림, 수수료, 가짜 토큰 여부를 한국어로 요약합니다.</p>${search}
 ${s ? `<div class="card grid"><div><div class="muted">Montra 누적 토큰</div><div class="num">${s.tokensLaunched.toLocaleString()}</div></div><div><div class="muted">최근 24시간 발행</div><div class="num">${s.launched24h.toLocaleString()}</div></div><div><div class="muted">24시간 거래</div><div class="num">${usd(s.volume24hUsd)}</div></div></div>` : ""}`);
   }
   if (path === "/t") {
@@ -108,6 +114,14 @@ ${s ? `<div class="card grid"><div><div class="muted">Montra 누적 토큰</div>
 <li>🔴/🟡 전송 수수료 5% 이상 / 2% 이상, 개발자·상위 10개 지갑 보유 비율(유동성 풀 제외), 개발자 지갑의 실패 이력</li>
 <li>🟡 pump.fun 졸업 후 유동성 $10,000 미만, 유동성 풀 잠금 50% 미만, 유명 토큰 이름 베낌</li>
 <li>⚪ 아직 pump.fun 본딩 커브 단계, 토큰 정보 변경 가능</li></ul></div>
+<h2>Base 추가 규칙</h2><div class="card"><ul class="flags">
+<li>🔴 매도 시험에서 팔 수 없으면 다른 항목과 관계없이 "위험 신호 많음"(허니팟이거나 허가된 지갑만 거래 가능한 토큰). Solana에서 이미 러그로 표시된 토큰도 같습니다.</li>
+<li>🟡 두 검사(Honeypot.is 매도 시험, GoPlus)의 결과가 엇갈리면 확정하지 않고 "엇갈림"으로 표시하며, 등급은 최소 "주의"입니다.</li>
+<li>🔴 코드 미검증, 숨겨진 소유자, 소유권 되찾기, 컨트랙트 삭제 기능, 지갑별 수수료, 개발자의 허니팟 이력, 한 번에 다 팔 수 없음</li>
+<li>🔴/🟡 거래 수수료 5% 이상 / 2% 이상, 개발자 지갑 보유 20% 이상 / 10% 이상, 상위 지갑 보유 50% 이상 / 30% 이상(풀·잠금 같은 컨트랙트 제외)</li>
+<li>🟡 수수료 변경 가능, 거래 정지 기능, 지갑 차단 기능, 코드 변경 가능(프록시), 추가 발행 가능, 유동성 $10,000 미만, 유동성의 절반 이상을 한 지갑이 잠그지 않고 보유</li>
+<li>🟡 데이터를 받지 못한 항목(팔 수 있는지, 수수료, 컨트랙트 권한, 보유 분포)은 "확인하지 못한 항목"으로 표시하고, 하나라도 있으면 등급은 최소 "주의"입니다.</li>
+<li>🟢 소유권 포기(코드 검증됨, 프록시 아님, 추가 발행 불가)</li></ul></div>
 <p class="muted">"실패"는 (Elysium은 졸업하지 못하고) 시가총액 $5,000 미만에 머문, 생성 6시간이 넘은 토큰입니다.</p>`, "점수 계산 방법");
   }
   return [404, "text/plain; charset=utf-8", "not found"];

@@ -44,7 +44,7 @@
    - 데이터: DexScreener, RugCheck (GoPlus는 RugCheck와 겹쳐 뺐다)
    - 규칙 추가: 추가 발행·동결 권한, 유동성 소각, Pump.fun 개발자 이력
    - check: Solana 토큰 20개에서 블록 1과 같은 기준을 통과한다. 신청서 초안이 준비된다.
-6. [ ] **11/18~11/22 Base 추가 + Base Builder Grant 신청서, 12월 Elysium 업그레이드 대비**
+6. [~] **11/18~11/22 Base 추가 + Base Builder Grant 신청서, 12월 Elysium 업그레이드 대비 (Base 지원은 11/11 앞당겨 완료, 신청서 남음)**
    - 데이터: DexScreener, GoPlus, Honeypot.is
    - check: Base 토큰 20개에서 같은 기준을 통과한다. 신청서 초안이 준비된다.
 
@@ -86,3 +86,10 @@
   - 표본 43개로 RugCheck 내부자 수(graphInsidersDetected)를 봤지만 살아 있는 토큰에도 850 같은 값이 있어 규칙으로 넣지 않았다.
   - 사후 표본은 죽은 토큰이 적게 잡혀 치우친다. 대신 사전 검증 스냅샷(116개)을 커밋했다.
 - 2026-11-10: Superteam Earn API에서 Korea 그랜트를 포함한 지역 그랜트가 모두 일시 중지(isPaused) 상태였다. Solana Foundation 표준 그랜트(상시, "free community offering" 대상)로 신청서 초안을 썼다.
+- 2026-11-11: Base 지원 추가(`src/chains/base.ts`, `src/score-base.ts`). 데이터는 GoPlus(컨트랙트 권한·보유 분포), Honeypot.is(매도 시험), DexScreener(가격·유동성).
+  - 0x 주소는 Montra에서 먼저 찾고 404면 Base로 넘어간다. Base는 DexScreener에 풀이 없으면 바로 "찾을 수 없음"으로 답해 지갑 주소가 GoPlus 한도를 쓰지 않게 했다.
+  - GoPlus는 키 없이 분당 약 10회에서 막혔다(측정). 결과를 3분간 기억한다.
+  - 실제 Base 토큰 56개 검사, 오류 0. Honeypot.is 단독 판정에 오판이 있었다(거래소 상장 토큰 ICNT, 허가제 주식 토큰). 두 출처가 엇갈리면 확정하지 않고 "엇갈림"(최소 주의)으로 표시하고, 반대 의견이 없을 때만 "팔 수 없음"(위험 신호 많음 확정)으로 본다.
+  - Codex 교차 검토 8건 모두 반영: 데이터를 못 받은 항목은 "확인하지 못한 항목"으로 모아 표시하고 등급을 최소 주의로, 소유권 포기와 무관하게 추가 발행 경고, 거래를 권하는 문구 삭제, DexScreener 장애는 "잠시 후 다시", 캐시 항목별 보관 시간, 라우팅·캐시 테스트 추가.
+  - 테스트 42개 통과. 로컬 웹: Base 리포트 200(1.0초), 지갑 주소 404, Solana 리포트 200.
+  - 한계: 죽은 Base 토큰을 모을 공개 목록이 없어 사후 비교는 못 했다. 대신 Base 39개 사전 검증 기록(`validation/forward-2026-11-10-231135.json`)을 남겼다. Base는 개발자의 다른 토큰 이력을 무료로 얻을 곳이 없어 제공하지 않는다.

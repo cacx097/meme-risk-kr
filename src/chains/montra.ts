@@ -42,10 +42,11 @@ export class ApiError extends Error {
 const cache = new Map<string, { at: number; value: unknown }>();
 
 /** Cache a response; drop expired entries once the map gets big so memory stays flat on a long-running server. */
-export function remember(map: Map<string, { at: number; value: unknown }>, key: string, value: unknown, ttl = TTL_MS) {
+export function remember(map: Map<string, { at: number; value: unknown; ttl?: number }>, key: string, value: unknown, ttl = TTL_MS) {
   const now = Date.now();
-  if (map.size >= 1_000) for (const [k, v] of map) if (now - v.at >= ttl) map.delete(k);
-  map.set(key, { at: now, value });
+  // each entry is judged by its own lifetime (GoPlus answers are kept longer than the rest)
+  if (map.size >= 1_000) for (const [k, v] of map) if (now - v.at >= (v.ttl ?? TTL_MS)) map.delete(k);
+  map.set(key, { at: now, value, ttl });
 }
 
 async function get<T>(path: string): Promise<T> {

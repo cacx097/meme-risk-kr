@@ -1,6 +1,8 @@
 // Gathers data for one token and scores it. The only place that talks to chain APIs.
-import { montra } from "./chains/montra.js";
+import { base } from "./chains/base.js";
+import { ApiError, montra, type MontraToken } from "./chains/montra.js";
 import { solana } from "./chains/solana.js";
+import { scoreBase } from "./score-base.js";
 import { scoreSolana } from "./score-solana.js";
 import { scoreToken, type Report } from "./score.js";
 
@@ -17,12 +19,35 @@ export function findAddress(text: string): string | null {
 
 export const isEvm = (address: string) => /^0x[a-fA-F0-9]{40}$/.test(address);
 
+async function analyzeBase(address: string, now: number): Promise<Report> {
+  // A token nobody can trade has no pool. Checking that first also keeps wallet addresses
+  // pasted in groups from using up the small GoPlus allowance.
+  // If DexScreener itself fails, the error goes up as "try again later" instead of a report without market data.
+  const pairs = await base.pairs(address);
+  if (!pairs.length) throw new ApiError("no Base pool", 404);
+  const [security, honeypot] = await Promise.all([base.security(address).catch(() => null), base.honeypot(address).catch(() => null)]);
+  return scoreBase({ address, security, honeypot, pairs, now });
+}
+
 export async function analyze(address: string, now = Date.now()): Promise<Report> {
   if (!isEvm(address)) {
     const [report, pairs] = await Promise.all([solana.report(address), solana.pairs(address).catch(() => [])]);
     return scoreSolana({ report, pairs, now });
   }
-  const token = await montra.token(address);
+  // 0x addresses look the same on Elysium and Base: ask Montra first, fall back to Base.
+  let token: MontraToken;
+  try {
+    token = await montra.token(address);
+  } catch (montraError) {
+    try {
+      return await analyzeBase(address, now);
+    } catch (baseError) {
+      // Not on Base either: if Montra itself was down, say "try again" rather than "not found".
+      const notOnBase = baseError instanceof ApiError && baseError.status === 404;
+      const notOnMontra = montraError instanceof ApiError && montraError.status === 404;
+      throw notOnBase && !notOnMontra ? montraError : baseError;
+    }
+  }
   const [holders, launches, sameName] = await Promise.all([
     montra.holders(address).catch(() => null),
     montra.launchesBy(token.creator).catch(() => ({ tokens: [] })),

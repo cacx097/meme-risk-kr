@@ -7,17 +7,18 @@ export interface Flag {
   id: string;
   severity: Severity;
   text: string; // Korean, one line
+  floor?: "caution" | "high"; // the level is at least this whatever the sum (cannot sell, already rugged: high; unchecked data: caution)
 }
 
-export type Chain = "elysium" | "solana";
+export type Chain = "elysium" | "solana" | "base";
 
 export interface Report {
   chain: Chain;
   token: { address: string; name: string; symbol: string; creator: string };
   marketCapUsd: number;
   volume24hUsd: number;
-  holders: number;
-  ageMinutes: number;
+  holders: number; // -1 when not known
+  ageMinutes: number; // -1 when the creation time is not known
   score: number; // 0 (few signals) .. 100 (many signals)
   level: "high" | "caution" | "low";
   flags: Flag[]; // most severe first
@@ -43,7 +44,9 @@ export const FAILED_MIN_AGE_MS = 6 * 3600_000;
 /** Shared by every chain: order flags, add up points, pick the level. */
 export function finish(flags: Flag[]): Pick<Report, "flags" | "score" | "level"> {
   flags.sort((a, b) => ORDER.indexOf(a.severity) - ORDER.indexOf(b.severity));
-  const score = Math.max(0, Math.min(100, flags.reduce((s, f) => s + POINTS[f.severity], 0)));
+  const sum = Math.max(0, Math.min(100, flags.reduce((s, f) => s + POINTS[f.severity], 0)));
+  const floor = flags.some((f) => f.floor === "high") ? 60 : flags.some((f) => f.floor === "caution") ? 30 : 0;
+  const score = Math.max(sum, floor);
   return { flags, score, level: score >= 60 ? "high" : score >= 30 ? "caution" : "low" };
 }
 

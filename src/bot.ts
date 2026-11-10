@@ -7,7 +7,7 @@ import { Inflight } from "./inflight.js";
 import { addrKey, type AlertSub, type Store } from "./store.js";
 
 export const HELP = [
-  "<b>밈코인 위험 점수 봇</b> (Elysium · Solana)",
+  "<b>밈코인 위험 점수 봇</b> (Elysium · Solana · Base)",
   "",
   "토큰 주소를 보내면 위험 신호를 요약해 드립니다. 그룹에 넣어두면 누가 주소를 올릴 때 자동으로 답합니다.",
   "",
@@ -24,7 +24,7 @@ const REPLY = { parse_mode: "HTML" as const, link_preview_options: { is_disabled
 export function errorMessage(e: unknown, address = ""): string {
   if (e instanceof ApiError && e.status === 404)
     return isEvm(address)
-      ? "Montra(Elysium)에서 찾을 수 없는 토큰 주소입니다. Base는 곧 지원 예정입니다."
+      ? "Elysium(Montra)과 Base에서 찾을 수 없는 토큰 주소입니다. 지갑 주소가 아니라 토큰 주소인지 확인해 주세요."
       : "Solana에서 찾을 수 없는 토큰 주소입니다. 지갑 주소가 아니라 토큰 주소인지 확인해 주세요.";
   return "데이터를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.";
 }
@@ -94,7 +94,7 @@ export function createBot(token: string, store: Store, webBase?: string, jobs = 
 
   bot.command("check", async (ctx) => {
     const a = findAddress(ctx.match);
-    if (!a) return ctx.reply("사용법: /check 토큰주소 (Elysium 0x... 또는 Solana)");
+    if (!a) return ctx.reply("사용법: /check 토큰주소 (Elysium·Base 0x... 또는 Solana)");
     await check(ctx, a);
   });
 
@@ -135,7 +135,7 @@ export function createBot(token: string, store: Store, webBase?: string, jobs = 
           repeat.done(ctx.chat.id, a, ok);
         }
       }
-    } else if (!isGroup(ctx)) await ctx.reply("토큰 주소를 보내 주세요 (Elysium 0x... 또는 Solana). /help 로 사용법을 볼 수 있습니다.");
+    } else if (!isGroup(ctx)) await ctx.reply("토큰 주소를 보내 주세요 (Elysium·Base 0x... 또는 Solana). /help 로 사용법을 볼 수 있습니다.");
   });
 
   bot.catch((err) => console.error("bot error", err.message));

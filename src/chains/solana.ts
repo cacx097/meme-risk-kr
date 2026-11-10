@@ -37,9 +37,13 @@ export interface DexPair {
 const TTL_MS = 20_000;
 const cache = new Map<string, { at: number; value: unknown }>();
 
-async function get<T>(url: string, label: string): Promise<T> {
+/**
+ * Cached JSON GET shared by the Solana and Base clients.
+ * `check` may throw to reject a body that arrived with HTTP 200 (so it is not cached).
+ */
+export async function getJson<T>(url: string, label: string, opts: { ttl?: number; check?: (value: T) => void } = {}): Promise<T> {
   const hit = cache.get(url);
-  if (hit && Date.now() - hit.at < TTL_MS) return hit.value as T;
+  if (hit && Date.now() - hit.at < (opts.ttl ?? TTL_MS)) return hit.value as T;
   for (let attempt = 0; ; attempt++) {
     const res = await fetch(url, { headers: { accept: "application/json" }, signal: AbortSignal.timeout(10_000) });
     if (res.status === 429 && attempt === 0) {
@@ -49,12 +53,13 @@ async function get<T>(url: string, label: string): Promise<T> {
     // RugCheck answers 400 for strings that are not a token mint (wallets etc.): treat as not found.
     if (!res.ok) throw new ApiError(`${label} ${res.status}`, res.status === 400 ? 404 : res.status);
     const value = (await res.json()) as T;
-    remember(cache, url, value);
+    opts.check?.(value);
+    remember(cache, url, value, opts.ttl);
     return value;
   }
 }
 
 export const solana = {
-  report: (mint: string) => get<RugReport>(`https://api.rugcheck.xyz/v1/tokens/${mint}/report`, "RugCheck"),
-  pairs: (mint: string) => get<DexPair[]>(`https://api.dexscreener.com/tokens/v1/solana/${mint}`, "DexScreener"),
+  report: (mint: string) => getJson<RugReport>(`https://api.rugcheck.xyz/v1/tokens/${mint}/report`, "RugCheck"),
+  pairs: (mint: string) => getJson<DexPair[]>(`https://api.dexscreener.com/tokens/v1/solana/${mint}`, "DexScreener"),
 };

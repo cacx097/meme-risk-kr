@@ -2,7 +2,7 @@
 import type { Flag, Report } from "./score.js";
 
 export const DISCLAIMER = "투자 조언이 아닌 공개 데이터 기반 참고 정보입니다.";
-export const CHAIN_LABEL: Record<Report["chain"], string> = { elysium: "Elysium", solana: "Solana" };
+export const CHAIN_LABEL: Record<Report["chain"], string> = { elysium: "Elysium", solana: "Solana", base: "Base" };
 
 const LEVEL_LABEL: Record<Report["level"], string> = {
   high: "🔴 위험 신호 많음",
@@ -19,7 +19,10 @@ export function usd(n: number): string {
   return `$${n.toFixed(0)}`;
 }
 
+export const holders = (n: number) => (n < 0 ? "모름" : n.toLocaleString());
+
 function age(min: number): string {
+  if (min < 0) return "생성 시각 모름";
   if (min < 60) return `${min}분`;
   if (min < 48 * 60) return `${Math.round(min / 60)}시간`;
   return `${Math.round(min / 1440)}일`;
@@ -32,7 +35,7 @@ export function telegramSummary(r: Report, webBase?: string): string {
   const lines = [
     `<b>${esc(r.token.name)} ($${esc(r.token.symbol)})</b> · ${CHAIN_LABEL[r.chain]}`,
     `${LEVEL_LABEL[r.level]} · 점수 ${r.score}/100`,
-    `시총 ${usd(r.marketCapUsd)} · 24h 거래 ${usd(r.volume24hUsd)} · 보유자 ${r.holders} · ${age(r.ageMinutes)} 전 생성`,
+    `시총 ${usd(r.marketCapUsd)} · 24h 거래 ${usd(r.volume24hUsd)} · 보유자 ${holders(r.holders)} · ${age(r.ageMinutes)}${r.ageMinutes < 0 ? "" : " 전 생성"}`,
     "",
     ...(warnings.length ? warnings : r.flags.filter((f) => f.severity === "low").slice(0, 2)).map((f) => `${ICON[f.severity]} ${esc(f.text)}`),
     ...goods.map((f) => `${ICON[f.severity]} ${esc(f.text)}`),
@@ -47,8 +50,10 @@ export function textReport(r: Report): string {
   return [
     `${r.token.name} ($${r.token.symbol}) ${CHAIN_LABEL[r.chain]} ${r.token.address}`,
     `${LEVEL_LABEL[r.level]}  점수 ${r.score}/100`,
-    `시총 ${usd(r.marketCapUsd)} · 24h ${usd(r.volume24hUsd)} · 보유자 ${r.holders} · ${age(r.ageMinutes)}`,
-    `개발자 이력: 다른 토큰 ${r.creatorHistory.launches}개, 실패 ${r.creatorHistory.failed}${r.chain === "elysium" ? `, 졸업 ${r.creatorHistory.graduated}` : ""}`,
+    `시총 ${usd(r.marketCapUsd)} · 24h ${usd(r.volume24hUsd)} · 보유자 ${holders(r.holders)} · ${age(r.ageMinutes)}`,
+    r.chain === "base"
+      ? "개발자 이력: Base는 아직 제공하지 않음"
+      : `개발자 이력: 다른 토큰 ${r.creatorHistory.launches}개, 실패 ${r.creatorHistory.failed}${r.chain === "elysium" ? `, 졸업 ${r.creatorHistory.graduated}` : ""}`,
     ...r.flags.map((f) => `  ${ICON[f.severity]} ${f.text}`),
   ].join("\n");
 }

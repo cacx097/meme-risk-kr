@@ -23,9 +23,14 @@
 - 사전 검증: `validation/forward-2026-11-10-1421.json`(116개 점수 기록). 11/12 14:21 UTC 이후 `npx tsx scripts/forward-test.ts eval validation/forward-2026-11-10-1421.json`.
 - 그랜트: Superteam 지역 그랜트는 전부 일시 중지(11/10 API 확인). Solana Foundation 표준 그랜트로 방향을 바꿨다. 초안은 `private/grant-solana-foundation.md`(git 제외).
 
+- Base 지원 완료(2026-11-11): `src/chains/base.ts`(GoPlus + Honeypot.is + DexScreener), `src/score-base.ts`. 0x 주소는 Montra 먼저, 없으면 Base. 테스트 42개.
+  - GoPlus는 키 없이 분당 약 10회. 한도를 넘거나 새 토큰이라 데이터가 없으면 "확인하지 못한 항목"으로 표시하고 등급은 최소 주의.
+  - Base 사전 검증 기록: `validation/forward-2026-11-10-231135.json`(39개, 기록 시각 UTC). 11/12 23:12 UTC 이후 평가.
+
 ## 다음
-1. 11/12 사전 검증 평가, 결과를 그랜트 초안에 반영.
-2. Base 지원 (블록 6): DexScreener + GoPlus + Honeypot.is(둘 다 키 없이 동작 확인).
+1. 11/12 사전 검증 평가(Elysium·Solana는 14:21 UTC 이후, Base는 23:12 UTC 이후), 결과를 그랜트 초안에 반영.
+2. Base Builder Grant 신청 경로 확인과 초안.
+3. (사용자 결정) GoPlus 무료 키 발급 여부.
 
 ## Project rules
 - 읽기 전용이다. 지갑 키와 매매 기능은 넣지 않는다. 투자 권유 문구를 쓰지 않고 안내 문구를 고정한다.

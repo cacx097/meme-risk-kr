@@ -38,7 +38,7 @@ export function scoreSolana({ report: r, pairs, now }: SolanaInput): Report {
   const marketCapUsd = pair?.marketCap ?? pair?.fdv ?? 0;
   const volume24hUsd = pair?.volume?.h24 ?? 0;
 
-  if (r.rugged) add("rugged", "high", "RugCheck에서 이미 러그(유동성 회수)로 표시됨");
+  if (r.rugged) flags.push({ id: "rugged", severity: "high", text: "RugCheck에서 이미 러그(유동성 회수)로 표시됨", floor: "high" });
 
   // Authorities
   if (r.mintAuthority) add("mint-auth", "high", "개발자가 토큰을 추가로 찍어낼 수 있음 (발행 권한 남아 있음)");
