@@ -6,11 +6,12 @@ import { Store } from "./store.js";
 import { startWeb } from "./web.js";
 
 const port = Number(process.env.PORT ?? 8787);
-const webBase = process.env.WEB_BASE ?? `http://localhost:${port}`;
+// Without a public WEB_BASE, bot messages carry no "자세히 보기" link (localhost is useless to other users).
+const webBase = process.env.WEB_BASE || undefined;
 const store = new Store(process.env.DATA_FILE ?? "data/state.json");
 
 startWeb(port, store, process.env.BOT_USERNAME);
-console.log(`web: ${webBase}`);
+console.log(`web: http://localhost:${port}${webBase ? ` (public ${webBase})` : ""}`);
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 if (token) {
