@@ -69,10 +69,15 @@ export class Store {
 
   save() {
     if (!this.file || this.timer) return;
-    this.timer = setTimeout(() => {
-      this.timer = null;
-      mkdirSync(dirname(this.file!), { recursive: true });
-      writeFileSync(this.file!, JSON.stringify(this.state));
-    }, 500);
+    this.timer = setTimeout(() => this.flush(), 500);
+  }
+
+  // Write now (used on shutdown so a redeploy does not drop the last changes)
+  flush() {
+    if (this.timer) clearTimeout(this.timer);
+    this.timer = null;
+    if (!this.file) return;
+    mkdirSync(dirname(this.file), { recursive: true });
+    writeFileSync(this.file, JSON.stringify(this.state));
   }
 }

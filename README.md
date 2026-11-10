@@ -19,6 +19,12 @@ npx tsx scripts/validate.ts      # 실제 졸업 토큰으로 점수 검증
 - `PORT`: 웹 포트입니다.
 - `DATA_FILE`: 사용 통계와 알림 설정을 저장할 파일입니다. 기본값은 `data/state.json`입니다.
 
+## 서버에 올리기 (Railway)
+1. Railway에서 이 저장소로 새 서비스를 만든다. 시작 명령은 `npm start`(자동 인식).
+2. Variables에 `TELEGRAM_BOT_TOKEN`, `BOT_USERNAME`, `DATA_FILE=/data/state.json`을 넣는다.
+3. Volume을 `/data`에 붙인다. 이렇게 해야 다시 배포해도 사용 통계와 알림 설정이 남는다.
+4. 같은 봇 토큰으로 두 곳에서 동시에 실행하지 않는다. 텔레그램이 한 곳만 허용하므로 PC에서 켠 봇은 먼저 끈다.
+
 ## 그룹에서 자동 응답을 쓰려면
 텔레그램 봇은 기본 설정으로는 그룹의 일반 메시지를 읽지 못합니다. 그룹에서 주소가 올라올 때 자동으로 응답하게 하려면 아래 둘 중 하나가 필요합니다.
 - @BotFather → `/setprivacy` → 봇 선택 → **Disable**

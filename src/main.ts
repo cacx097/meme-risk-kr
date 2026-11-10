@@ -20,6 +20,14 @@ if (token) {
     await bot.api.sendMessage(chatId, html, { parse_mode: "HTML", link_preview_options: { is_disabled: true } });
   }, webBase);
   bot.start({ onStart: (me) => console.log(`bot: @${me.username}`) });
+  // Servers stop the old copy with SIGTERM on each deploy: stop polling and save first.
+  for (const sig of ["SIGTERM", "SIGINT"] as const) {
+    process.once(sig, async () => {
+      store.flush();
+      await bot.stop().catch(() => {});
+      process.exit(0);
+    });
+  }
 } else {
   console.log("bot: TELEGRAM_BOT_TOKEN not set, web only");
 }

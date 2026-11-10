@@ -12,8 +12,11 @@
 - 홍보 문구 초안: `docs/launch-ko.md`
 - 봇 토큰은 프로젝트에 저장하지 않았다. 실행할 때 `TELEGRAM_BOT_TOKEN` 환경 변수로 넣는다.
 
+- 코드 공개: https://github.com/cacx097/meme-risk-kr (GitHub 계정은 항상 cacx097)
+- 서버: Railway Hobby(월 5달러)로 결정. 사용자 가입·결제 대기.
+
 ## 다음
-1. 공개 준비 (사용자 승인 필요): 실행 장소, 공개 웹 주소(`WEB_BASE`), 코드 공개, 홍보.
+1. Railway에 배포한다 (README의 "서버에 올리기"). 웹은 공개 주소 없이 봇만 먼저 공개한다.
 2. Solana 어댑터 (블록 5).
 
 ## Project rules
