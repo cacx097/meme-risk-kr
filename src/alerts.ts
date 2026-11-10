@@ -48,7 +48,8 @@ export function startAlerts(store: Store, send: Send, webBase?: string) {
     for (const [chatId, list] of Object.entries(store.state.watches))
       for (const a of list) byToken.set(a, [...(byToken.get(a) ?? []), chatId]);
     for (const [address, chats] of byToken) {
-      const r = await analyze(address);
+      const r = await analyze(address).catch(() => null); // one bad token must not stop the others
+      if (!r) continue;
       const prev = store.state.lastLevel[address];
       store.state.lastLevel[address] = r.level;
       if (worsened(prev, r))

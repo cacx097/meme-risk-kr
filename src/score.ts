@@ -9,8 +9,10 @@ export interface Flag {
   text: string; // Korean, one line
 }
 
+export type Chain = "elysium" | "solana";
+
 export interface Report {
-  chain: "elysium";
+  chain: Chain;
   token: { address: string; name: string; symbol: string; creator: string };
   marketCapUsd: number;
   volume24hUsd: number;
@@ -35,8 +37,15 @@ const POINTS: Record<Severity, number> = { high: 30, mid: 15, low: 5, good: -10 
 const ORDER: Severity[] = ["high", "mid", "low", "good"];
 // Montra graduation is ~$58.7k market cap; a fresh launch opens near $3.2–3.5k.
 const GRADUATION_MCAP_USD = 58_700;
-const FAILED_MCAP_USD = 5_000;
-const FAILED_MIN_AGE_MS = 6 * 3600_000;
+export const FAILED_MCAP_USD = 5_000;
+export const FAILED_MIN_AGE_MS = 6 * 3600_000;
+
+/** Shared by every chain: order flags, add up points, pick the level. */
+export function finish(flags: Flag[]): Pick<Report, "flags" | "score" | "level"> {
+  flags.sort((a, b) => ORDER.indexOf(a.severity) - ORDER.indexOf(b.severity));
+  const score = Math.max(0, Math.min(100, flags.reduce((s, f) => s + POINTS[f.severity], 0)));
+  return { flags, score, level: score >= 60 ? "high" : score >= 30 ? "caution" : "low" };
+}
 
 const pct = (pips: number) => `${+(pips / 10_000).toFixed(2)}%`;
 
@@ -108,11 +117,6 @@ export function scoreToken(input: ScoreInput): Report {
     add("post-grad-drop", "mid", "졸업 후 졸업 기준 아래로 다시 떨어짐");
   if (!t.liquiditySealed) add("unsealed", "low", "유동성이 봉인되지 않음");
 
-  flags.sort((a, b) => ORDER.indexOf(a.severity) - ORDER.indexOf(b.severity));
-  const raw = flags.reduce((s, f) => s + POINTS[f.severity], 0);
-  const score = Math.max(0, Math.min(100, raw));
-  const level = score >= 60 ? "high" : score >= 30 ? "caution" : "low";
-
   return {
     chain: "elysium",
     token: { address: t.address, name: t.name, symbol: t.symbol, creator: t.creator },
@@ -120,9 +124,7 @@ export function scoreToken(input: ScoreInput): Report {
     volume24hUsd: t.volume24hUsd,
     holders: t.holders,
     ageMinutes: Math.round(ageMs / 60_000),
-    score,
-    level,
-    flags,
+    ...finish(flags),
     creatorHistory: { launches: others.length, failed, graduated },
     lookalikes: twins.length,
   };

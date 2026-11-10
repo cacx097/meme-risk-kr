@@ -16,9 +16,12 @@
 - 서버: Railway Hobby(월 5달러, 사용 한도 5달러). 프로젝트 `meme-risk-kr`, 서비스 `bot`, 저장 공간 `/data`. `railway up --service bot`으로 올린다. 2026-11-10 배포 성공, 로그에 `bot: @MemeRiskKR_bot`.
 - PC에서 같은 봇 토큰으로 동시에 실행하지 않는다.
 
+- 서버 봇 1:1·그룹 동작 사용자 확인 완료. Railway Compute 한도 $10, 알림 $5.
+- Solana 지원 완료: `src/chains/solana.ts`(RugCheck + DexScreener), `src/score-solana.ts`. 테스트 20개 통과.
+
 ## 다음
-1. 서버 봇이 실제로 답하는지, 그룹 자동 응답이 되는지 사용자 확인.
-2. Solana 어댑터 (블록 5).
+1. Superteam Instagrant 신청서 초안 (블록 5 나머지).
+2. Base 지원 (블록 6).
 
 ## Project rules
 - 읽기 전용이다. 지갑 키와 매매 기능은 넣지 않는다. 투자 권유 문구를 쓰지 않고 안내 문구를 고정한다.

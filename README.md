@@ -1,7 +1,10 @@
-# Elysium 토큰 위험 점수 (텔레그램 봇 + 웹)
+# 밈코인 위험 점수 (텔레그램 봇 + 웹) · Elysium · Solana
 
-Elysium(Montra) 토큰 주소를 넣으면 개발자 이력, 보유 쏠림, 수수료, 가짜 토큰 여부를 한국어로 요약합니다.
-읽기 전용이며 지갑 키를 다루지 않습니다. 점수 규칙은 `/method` 페이지와 `src/score.ts`에 공개되어 있습니다.
+텔레그램 봇: [@MemeRiskKR_bot](https://t.me/MemeRiskKR_bot)
+
+Elysium(Montra)이나 Solana 토큰 주소를 넣으면 개발자 이력, 보유 쏠림, 수수료·권한, 가짜 토큰 여부를 한국어로 요약합니다.
+읽기 전용이며 지갑 키를 다루지 않습니다. 점수 규칙은 `/method` 페이지와 `src/score.ts`, `src/score-solana.ts`에 공개되어 있습니다.
+데이터: Montra 공개 API(Elysium), RugCheck·DexScreener 공개 API(Solana).
 
 ## 실행
 ```
@@ -9,7 +12,8 @@ npm install
 npm test                         # 단위 테스트
 npm run check -- 0x토큰주소       # 명령줄 검사
 npm start                        # 웹(기본 http://localhost:8787), 토큰이 있으면 봇도 실행
-npx tsx scripts/validate.ts      # 실제 졸업 토큰으로 점수 검증
+npx tsx scripts/validate.ts      # 실제 졸업 토큰으로 점수 검증 (Elysium)
+npx tsx scripts/validate-solana.ts  # 실제 토큰으로 점수 검증 (Solana)
 ```
 
 환경 변수:

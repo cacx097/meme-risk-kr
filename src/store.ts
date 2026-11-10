@@ -17,6 +17,9 @@ export interface State {
   alerted: string[]; // token addresses already announced
 }
 
+/** Storage key for a token address: EVM is case-insensitive, Solana base58 is not. */
+export const addrKey = (address: string) => (address.startsWith("0x") ? address.toLowerCase() : address);
+
 const empty = (): State => ({ users: [], groups: [], checks: 0, watches: {}, lastLevel: {}, alerts: {}, alerted: [] });
 
 export class Store {
@@ -48,7 +51,7 @@ export class Store {
 
   watch(chatId: number, address: string): boolean {
     const list = (this.state.watches[chatId] ??= []);
-    const a = address.toLowerCase();
+    const a = addrKey(address);
     if (list.includes(a) || list.length >= 20) return false;
     list.push(a);
     this.save();
@@ -57,7 +60,7 @@ export class Store {
 
   unwatch(chatId: number, address: string) {
     const list = this.state.watches[chatId] ?? [];
-    this.state.watches[chatId] = list.filter((a) => a !== address.toLowerCase());
+    this.state.watches[chatId] = list.filter((a) => a !== addrKey(address));
     this.save();
   }
 
