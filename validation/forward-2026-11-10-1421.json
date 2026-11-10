@@ -1,0 +1,1715 @@
+{
+ "at": 1794320507701,
+ "tokens": [
+  {
+   "address": "fzRX2TXuPSH5Xj7qsutFHmV5Zz7JouCYbn3pTaorise",
+   "chain": "solana",
+   "symbol": "CrazyDave",
+   "score": 75,
+   "level": "high",
+   "flags": [
+    "mint-auth",
+    "top10",
+    "curve",
+    "rc-Mutable metadata",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "4oDqutdk4DuevWpPwLWWGc9j5ogq6Zw4paaQxm6Wpump",
+   "chain": "solana",
+   "symbol": "SARAH",
+   "score": 10,
+   "level": "low",
+   "flags": [
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "8Mti7SAMyw1p9prNePpXY8BRxEj4e27v3fvRUtR6BoKw",
+   "chain": "solana",
+   "symbol": "MPN",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "mint-auth",
+    "freeze-auth",
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "DEVApY9fq1HCrmrzaewttrNwcj69CsfnHc2cNcpRbMz4",
+   "chain": "solana",
+   "symbol": "RCL",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "freeze-auth",
+    "curve",
+    "rc-Mutable metadata",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "DUxGh6oa7czjXZc7Td2jMR1hM9BrZMYejhd3pdkfpump",
+   "chain": "solana",
+   "symbol": "MONKEY",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "serial",
+    "spam",
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "E4wz6WpzxNPUQ65rMEmNoZV5hKEdHxpZ9n5rFWhQpump",
+   "chain": "solana",
+   "symbol": "Hakong",
+   "score": 10,
+   "level": "low",
+   "flags": [
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "GLyCWpvXceZxSB1Le4jFp9UxCAyRBBbVeK2bhTxhhfzy",
+   "chain": "solana",
+   "symbol": "Hakong",
+   "score": 10,
+   "level": "low",
+   "flags": [
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "H9uJYobmeqefh8KkwckWZMBwDYmScXPA7KevRr82pump",
+   "chain": "solana",
+   "symbol": "$DACITY",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "serial",
+    "spam",
+    "curve",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 0
+  },
+  {
+   "address": "CBvKLMCUsHbQjzZz5VdgYZnAtM9Zqx2bpgkKzpHppump",
+   "chain": "solana",
+   "symbol": "tape",
+   "score": 10,
+   "level": "low",
+   "flags": [
+    "curve",
+    "new"
+   ],
+   "mcap": 2367.62,
+   "ageMinutes": 1
+  },
+  {
+   "address": "BodzYGkA3q7kQ6yoiaFQko52oH3twtFCigVpqzycy1De",
+   "chain": "solana",
+   "symbol": "POOP",
+   "score": 20,
+   "level": "low",
+   "flags": [
+    "low-liq",
+    "new"
+   ],
+   "mcap": 0,
+   "ageMinutes": 1
+  },
+  {
+   "address": "HsprHxBRgiVaQdRf3TnKNuZZtaX9JUSPgMFdAkk6pump",
+   "chain": "solana",
+   "symbol": "GATO",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 9024900,
+   "ageMinutes": 110994
+  },
+  {
+   "address": "FZxHLUGiGchY5uvvoeqh1EKiXTrGdN67WUBhUc1fLoat",
+   "chain": "solana",
+   "symbol": "PUSSY",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 709353,
+   "ageMinutes": 2518
+  },
+  {
+   "address": "GexThZHgaswpAQ7Fi8QrHFubjPimUNSYhJiAA7XZpump",
+   "chain": "solana",
+   "symbol": "WASTED",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 1456037,
+   "ageMinutes": 15611
+  },
+  {
+   "address": "Bv1a7cEj5aRnJQhMw4kRQqAFesMSd5LwcDnUzq52BMmr",
+   "chain": "solana",
+   "symbol": "FLOAT",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 8992864,
+   "ageMinutes": 18266
+  },
+  {
+   "address": "22JKmY9YZfnQfb3pGYb6hctL5Jyvv3zhL3nQ8oyNuoYp",
+   "chain": "solana",
+   "symbol": "Pepetide",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 437281,
+   "ageMinutes": 3741
+  },
+  {
+   "address": "6C5USgghERG9Rwhr2D1Ny9wTb62HdHhAt5QQ7qgZZZTe",
+   "chain": "solana",
+   "symbol": "TREMP",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "low-liq"
+   ],
+   "mcap": 14456,
+   "ageMinutes": 1209
+  },
+  {
+   "address": "DtcicPCKTKeAh7TDEzTym3hXeoHAoMiBdYJhMYxZpump",
+   "chain": "solana",
+   "symbol": "CBUCKS",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "top10"
+   ],
+   "mcap": 4144052,
+   "ageMinutes": 50150
+  },
+  {
+   "address": "DigVnUDwgbSSWNMNsgzGNw8EQhqwjniPU2EsfD4Wpump",
+   "chain": "solana",
+   "symbol": "CHAINCHOMP131",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 44034,
+   "ageMinutes": 1385
+  },
+  {
+   "address": "52N8mH4XGpnsQJbpexD3oxw1G2zZn7m2jX6VSpkd6btd",
+   "chain": "solana",
+   "symbol": "BREW",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 35670,
+   "ageMinutes": 610
+  },
+  {
+   "address": "6kmkcwKxxmoREhkxrbBvwDY3N2KSfpdMMtWtNoPpump",
+   "chain": "solana",
+   "symbol": "LASTTRUCK",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "low-liq"
+   ],
+   "mcap": 3983,
+   "ageMinutes": 1366
+  },
+  {
+   "address": "76indaHnwAuKrK2oBpBcPsVe1jRbYHCRYDsYuJ1MVys4",
+   "chain": "solana",
+   "symbol": "DACITYCOIN",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 189721,
+   "ageMinutes": 18074
+  },
+  {
+   "address": "5NmhSUzikDT8QUiAX2oSNR7RSFD1i1krmnFXwheEpump",
+   "chain": "solana",
+   "symbol": "fofo",
+   "score": 20,
+   "level": "low",
+   "flags": [
+    "low-liq",
+    "new"
+   ],
+   "mcap": 5061,
+   "ageMinutes": 31
+  },
+  {
+   "address": "9S1DYY1wKRuETUfQ88pDtpxrKf5CsEJcYompw2CRApad",
+   "chain": "solana",
+   "symbol": "MEOW",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 87129,
+   "ageMinutes": 789
+  },
+  {
+   "address": "EZBcgdXxfWCscEMjehuFvsvYzdkG2T9z7PWi8nr9Mo46",
+   "chain": "solana",
+   "symbol": "CASINO",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "top10",
+    "lp-unlocked"
+   ],
+   "mcap": 39734,
+   "ageMinutes": 950
+  },
+  {
+   "address": "8ETPDhk262rJvF6rNCpRkLLsDsZKjf88tReMT9woPM2Z",
+   "chain": "solana",
+   "symbol": "RAIN",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 0,
+   "ageMinutes": 72
+  },
+  {
+   "address": "3RJ8MmZmbVBPqj7re8AHcrMvPq5MctYqu1ZHXMZkpump",
+   "chain": "solana",
+   "symbol": "XOGE",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 10197.56,
+   "ageMinutes": 270
+  },
+  {
+   "address": "8QCqrCmjCTmFarmq8SxCryuxzMBLVEWasbFaZQgXpump",
+   "chain": "solana",
+   "symbol": "h1t",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "low-liq"
+   ],
+   "mcap": 9936,
+   "ageMinutes": 62
+  },
+  {
+   "address": "A8oG7Zq3tEgquTKYnXUu2jjDRc2ooRJLN8DxHsnpump",
+   "chain": "solana",
+   "symbol": "SOL",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 5140.32,
+   "ageMinutes": 66
+  },
+  {
+   "address": "X7Fk2APb7rjMnPDNjHhYvb2L8tWbNfVxXzr7RWspump",
+   "chain": "solana",
+   "symbol": "PokéMeal",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "new"
+   ],
+   "mcap": 99970,
+   "ageMinutes": 59
+  },
+  {
+   "address": "783FVoae5TP78vdCbuGBbbmdferrNU51r1xXSvpMpump",
+   "chain": "solana",
+   "symbol": "Sheep",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 2641.14,
+   "ageMinutes": 96
+  },
+  {
+   "address": "86eESqktK5qmPyZ5mHPoELR32uj9YYa4uB4iMhp6pump",
+   "chain": "solana",
+   "symbol": "Seraph",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 2413.85,
+   "ageMinutes": 101
+  },
+  {
+   "address": "HM75BcTrc9jJ1Y5eaBWfSREpPxdEiRmxQGdS1DZpump",
+   "chain": "solana",
+   "symbol": "ELONJONG",
+   "score": 0,
+   "level": "low",
+   "flags": [],
+   "mcap": 66791,
+   "ageMinutes": 119
+  },
+  {
+   "address": "G4KLCTPjNyiQFEF2SExtKnHSt8t7rtPYRsdhYR3jpump",
+   "chain": "solana",
+   "symbol": "Max",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "low-liq",
+    "rc-Copycat token"
+   ],
+   "mcap": 4938,
+   "ageMinutes": 208
+  },
+  {
+   "address": "6174xdM8VMLvyfbQZ2fRcT37cVWME2k9FEnNoL83pump",
+   "chain": "solana",
+   "symbol": "XSHAMA",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 13135.56,
+   "ageMinutes": 171
+  },
+  {
+   "address": "FVtYCvthmsdx61EiK2nRAfCypiZgmMSJfCjbkEwGpump",
+   "chain": "solana",
+   "symbol": "KIM",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 0,
+   "ageMinutes": 138
+  },
+  {
+   "address": "6d9SJVns9WUmcUeKcHitTccGVKTD6QsPZ6fDi2e1pump",
+   "chain": "solana",
+   "symbol": "OLCCL",
+   "score": 5,
+   "level": "low",
+   "flags": [
+    "curve"
+   ],
+   "mcap": 0,
+   "ageMinutes": 145
+  },
+  {
+   "address": "3yjyHCC4EzLb7J7cx3uczgTrqhpXDCBkfShK8Rf3pump",
+   "chain": "solana",
+   "symbol": "TRUMP",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "serial"
+   ],
+   "mcap": 1247893,
+   "ageMinutes": 154
+  },
+  {
+   "address": "0x7a8d80ed295f5dea8d7a131570cb08cbc3b21e90",
+   "chain": "elysium",
+   "symbol": "Hakong",
+   "score": 65,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x2d37ca5ad5ca6daa57e86a506924ce3e1b4b870f",
+   "chain": "elysium",
+   "symbol": "Hakong",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "fee",
+    "serial",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x12fe1cf24cb756b9f80219e0d7516301458a383f",
+   "chain": "elysium",
+   "symbol": "ELYETCH",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3100.573948333279,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0xa3457d42bda43f38d7cf51f542a6fd89dc0add54",
+   "chain": "elysium",
+   "symbol": "Peekhole",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3106.3171529678566,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x4878e2612fa6fe6bbf466bd3cd121770851a68fd",
+   "chain": "elysium",
+   "symbol": "MAYAN",
+   "score": 75,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3087.6639571446176,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x9a7cbb57db94996e6ecd867dea736a3d94420055",
+   "chain": "elysium",
+   "symbol": "CPRS",
+   "score": 60,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x4034664299a69f983ae3da4a15a80dad622c1736",
+   "chain": "elysium",
+   "symbol": "RUBICON",
+   "score": 90,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x17ba3d5d8f62a8c7a60f70b56e1f9907d2127ec0",
+   "chain": "elysium",
+   "symbol": "RUBICON",
+   "score": 75,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 1
+  },
+  {
+   "address": "0x76ff9f77803adf09d3b9a98316c09e0fc8462562",
+   "chain": "elysium",
+   "symbol": "NOTTER",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x0884ed102f4f1b6f493d3e9507a4c91a571f7c36",
+   "chain": "elysium",
+   "symbol": "MONKEGIRL",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0xa6aded4a2d4b483d7dc283f529ac387635ab5b10",
+   "chain": "elysium",
+   "symbol": "MONKEGIRL",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x8a1dec525e6247fc4255a1a337b8ed36fe96c9e8",
+   "chain": "elysium",
+   "symbol": "PKOR",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "serial",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0xd49531711919e306d7bc1aba7aea5cf767c0c888",
+   "chain": "elysium",
+   "symbol": "upple",
+   "score": 65,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x69e2e7516f25c1edfd815d16368ca85526e0b746",
+   "chain": "elysium",
+   "symbol": "ELYCAT",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "copycat",
+    "fee",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x9f9b9ee493f5d39c6c542bda0565b31e13638be0",
+   "chain": "elysium",
+   "symbol": "upple",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "fee",
+    "serial",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0xd4defc435128dfe6bcdc8e035e0780b2a163cc84",
+   "chain": "elysium",
+   "symbol": "ONE",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x86b06e3fdfc2588eff0aa21ffa25e7d8ca31faad",
+   "chain": "elysium",
+   "symbol": "CPI",
+   "score": 60,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0x0d940d2a2d586622026dec921f19686e26e0cd8f",
+   "chain": "elysium",
+   "symbol": "MRB",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0xa1e68d04757e830da058def2f6dda96f35aeefd0",
+   "chain": "elysium",
+   "symbol": "CPI",
+   "score": 75,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 2
+  },
+  {
+   "address": "0xd81a2ebd0e0a5f6eb1f625bd5835efa36e099ac1",
+   "chain": "elysium",
+   "symbol": "DACITY",
+   "score": 95,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x1af7741d8b057d96aa58952815602f6f9b3b77d1",
+   "chain": "elysium",
+   "symbol": "DACITY",
+   "score": 80,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x901562bb33b3f1fc47408765485bb4b822bb514d",
+   "chain": "elysium",
+   "symbol": "CETUS",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "serial",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.2488462337833,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x4a9258461e4911ec811536be3af03ccffb9b4359",
+   "chain": "elysium",
+   "symbol": "ETEL",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x76b1ddd58c1f8d86db71f5f41b0fa87de81ab5c8",
+   "chain": "elysium",
+   "symbol": "SCM",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "serial",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3111.3483192957824,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0xcea4e997f8199850c382ce276e75f1dc292c697d",
+   "chain": "elysium",
+   "symbol": "PRIM",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.5519328575924,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x26d72ea873e7c7093ec69aea890186a275a24ffb",
+   "chain": "elysium",
+   "symbol": "ELHOOK",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "fee",
+    "new",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x2faa343b4e69188bef07aedc19d6ea3e21c9660a",
+   "chain": "elysium",
+   "symbol": "BITT",
+   "score": 25,
+   "level": "low",
+   "flags": [
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3129.7676921790658,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x19e7fd58884c9638637df253158e8b21b45e8d50",
+   "chain": "elysium",
+   "symbol": "ber",
+   "score": 95,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 3
+  },
+  {
+   "address": "0x59877c1c2b0776b9ed52f5a12bf8b935b7a4b0d8",
+   "chain": "elysium",
+   "symbol": "ber",
+   "score": 95,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "serial",
+    "spam",
+    "fee-recipient",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3086.247400635614,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x17ca76d1ced980afed04a1c608771d0af231ca99",
+   "chain": "elysium",
+   "symbol": "IF",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "new",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 5581.21217090394,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x56ffc08249a0aa4fed3544ae3954b636325a7806",
+   "chain": "elysium",
+   "symbol": "MEDOUSA",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x4d39d15b1a510f8c34a4bfd0037f3b50d9427bcc",
+   "chain": "elysium",
+   "symbol": "KSHIB",
+   "score": 85,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3343.7282588706016,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x30a8d7372138868aced6729dfc697b495083200d",
+   "chain": "elysium",
+   "symbol": "ELYSHIELD",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3537.4749053658234,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x911d1be55864b51d172bc63e71dc147c07dad0c1",
+   "chain": "elysium",
+   "symbol": "BEAR",
+   "score": 60,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0xa4a82b35cfe245215f103c75637ea2b4c7c908ff",
+   "chain": "elysium",
+   "symbol": "BEAR",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "fee",
+    "serial",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x83bcbfd15e0eec808608bb80cbf92669f0ff0b93",
+   "chain": "elysium",
+   "symbol": "PACT",
+   "score": 90,
+   "level": "high",
+   "flags": [
+    "serial",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x99e283bfcd86a841bb64869cf63d211d6a65a623",
+   "chain": "elysium",
+   "symbol": "PACT",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "fee",
+    "serial",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0x26509d84c715346f3d5048eb3c82627f4b9d754b",
+   "chain": "elysium",
+   "symbol": "jeff",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 4
+  },
+  {
+   "address": "0xcd88ebc67d912bbca5cde15f6f880c19abaa527e",
+   "chain": "elysium",
+   "symbol": "DACITYCOIN",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "serial",
+    "copycat",
+    "fee",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 5
+  },
+  {
+   "address": "0xc62bd6eb2cbf862f7a5173ba8d3618195edd157c",
+   "chain": "elysium",
+   "symbol": "DACITYCOIN",
+   "score": 100,
+   "level": "high",
+   "flags": [
+    "fee",
+    "copycat",
+    "fee-mutable",
+    "spam",
+    "fee-recipient",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802267596964,
+   "ageMinutes": 5
+  },
+  {
+   "address": "0x6c8148f45d0d46887ed4d0c11f7db57228538bfc",
+   "chain": "elysium",
+   "symbol": "perpelysium",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 30030.554922578875,
+   "ageMinutes": 24
+  },
+  {
+   "address": "0x1286dfeb1302260a546ff41f749ea03de4cabd06",
+   "chain": "elysium",
+   "symbol": "BOXA",
+   "score": 35,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "post-grad-drop",
+    "lookalike",
+    "new",
+    "unsealed",
+    "creator-grad"
+   ],
+   "mcap": 3083.6293892852605,
+   "ageMinutes": 41
+  },
+  {
+   "address": "0x8fc1fdfec00f0477656a3a60d52ec777a6ff1127",
+   "chain": "elysium",
+   "symbol": "ELYPORT",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 18693.58189121746,
+   "ageMinutes": 90
+  },
+  {
+   "address": "0xd0dd0bf62d5b10adc4360634253b4251b2f7db6c",
+   "chain": "elysium",
+   "symbol": "OnlyCats",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "post-grad-drop",
+    "unsealed",
+    "creator-grad"
+   ],
+   "mcap": 3083.844975278979,
+   "ageMinutes": 66
+  },
+  {
+   "address": "0x063f7cc5339f92a5fd7baf3d22233044fda1f327",
+   "chain": "elysium",
+   "symbol": "MONTRA",
+   "score": 50,
+   "level": "caution",
+   "flags": [
+    "top10",
+    "fee-mutable",
+    "creator-bag",
+    "lookalike",
+    "unsealed",
+    "official"
+   ],
+   "mcap": 6553259.902405366,
+   "ageMinutes": 824
+  },
+  {
+   "address": "0x6661a46767394e3122a3f3c78e638241ac2c1ac9",
+   "chain": "elysium",
+   "symbol": "CAT",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "post-grad-drop",
+    "unsealed",
+    "creator-grad"
+   ],
+   "mcap": 3083.615739946157,
+   "ageMinutes": 90
+  },
+  {
+   "address": "0x9055e69b60a39c16e960a404f99c5aed0e65266f",
+   "chain": "elysium",
+   "symbol": "UMI",
+   "score": 25,
+   "level": "low",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 3083.914949444512,
+   "ageMinutes": 62
+  },
+  {
+   "address": "0xd6506d948224730462ad0db463612a80c16ba524",
+   "chain": "elysium",
+   "symbol": "BIG",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed",
+    "creator-grad"
+   ],
+   "mcap": 3082.873711438287,
+   "ageMinutes": 27
+  },
+  {
+   "address": "0xfcd09d66de0092c2f9112458a55737bf4e5a98fd",
+   "chain": "elysium",
+   "symbol": "ETHEL",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "serial",
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 135447.1229788081,
+   "ageMinutes": 1437
+  },
+  {
+   "address": "0x492ed54e23d7b66264fccf0ee34395c5f6fea9a6",
+   "chain": "elysium",
+   "symbol": "BIG",
+   "score": 35,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "creator-bag",
+    "lookalike",
+    "new",
+    "unsealed",
+    "creator-grad"
+   ],
+   "mcap": 35239.785196405726,
+   "ageMinutes": 15
+  },
+  {
+   "address": "0x236feecd909ff562e775318c77781f4946c33b3b",
+   "chain": "elysium",
+   "symbol": "TESTICLES",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "serial",
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 629943.3011698882,
+   "ageMinutes": 6859
+  },
+  {
+   "address": "0xfd4aefb6633ac05b4849d2209a19c884744f026f",
+   "chain": "elysium",
+   "symbol": "IF",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "new",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 3864.5402280928124,
+   "ageMinutes": 46
+  },
+  {
+   "address": "0x410b5e3722e675215930d25c5efb9ce4d03fc1f4",
+   "chain": "elysium",
+   "symbol": "WHALE",
+   "score": 35,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "post-grad-drop",
+    "unsealed"
+   ],
+   "mcap": 3083.239069347602,
+   "ageMinutes": 87
+  },
+  {
+   "address": "0x5dcfb191f0cdb853bac3a6a4385e160e779e377f",
+   "chain": "elysium",
+   "symbol": "HYPEPE",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "serial",
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 373461.07586107694,
+   "ageMinutes": 1611
+  },
+  {
+   "address": "0x304381ad908a3ab2a83715ea156e5e3954e6bb16",
+   "chain": "elysium",
+   "symbol": "EPP402",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 13167.260933282783,
+   "ageMinutes": 30
+  },
+  {
+   "address": "0x8a1ea53aa1e0eb9b1ad534beee621a224bbaea8d",
+   "chain": "elysium",
+   "symbol": "WRAITH",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "wash",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3083.0151428699796,
+   "ageMinutes": 47
+  },
+  {
+   "address": "0x4e87d9e07fae9df529be410cbe635f24a885308c",
+   "chain": "elysium",
+   "symbol": "IF",
+   "score": 15,
+   "level": "low",
+   "flags": [
+    "serial",
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 17761.116717352303,
+   "ageMinutes": 5758
+  },
+  {
+   "address": "0x1ae29609aaed2bca9c49d9d48e8dfeb810f787b9",
+   "chain": "elysium",
+   "symbol": "SPHERE",
+   "score": 70,
+   "level": "high",
+   "flags": [
+    "copycat",
+    "fee-mutable",
+    "wash",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3089.4967408697444,
+   "ageMinutes": 16
+  },
+  {
+   "address": "0x32193afd14c53f12c45a4c04eca9f7ba98e3ec71",
+   "chain": "elysium",
+   "symbol": "EACCAT",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 647151.3216795268,
+   "ageMinutes": 6912
+  },
+  {
+   "address": "0xd662d66ec991a3eae4ecbda34327264c53d4cf38",
+   "chain": "elysium",
+   "symbol": "CHAMELEON",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 1077739.7170127751,
+   "ageMinutes": 7867
+  },
+  {
+   "address": "0x5822e7586a32d9a646ab9809b4cf1ea649fbc62a",
+   "chain": "elysium",
+   "symbol": "ABRACADABRA",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 3586.384538856724,
+   "ageMinutes": 62
+  },
+  {
+   "address": "0xf3aa02bb4299ec5092c059bf8baed5942b4a09ed",
+   "chain": "elysium",
+   "symbol": "Tesera",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 185074.10238254184,
+   "ageMinutes": 1226
+  },
+  {
+   "address": "0xa70a054ca52354b662fe439d51c35c3888dc816a",
+   "chain": "elysium",
+   "symbol": "HYPURR",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "copycat",
+    "serial",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 4175.216927026019,
+   "ageMinutes": 115
+  },
+  {
+   "address": "0x547a2a9c5af6e4372ead794e80eaf3f42dbbaaac",
+   "chain": "elysium",
+   "symbol": "BLOB",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 85485.45509744088,
+   "ageMinutes": 1624
+  },
+  {
+   "address": "0x405caa914fd1c1408ea526c90a6cfd429ee57ebe",
+   "chain": "elysium",
+   "symbol": "SHOKU",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 222624.71965421585,
+   "ageMinutes": 1528
+  },
+  {
+   "address": "0xdb166655136c67664a14d03d03959f8a5e447777",
+   "chain": "elysium",
+   "symbol": "floatra",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "wash",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.802282932323,
+   "ageMinutes": 23
+  },
+  {
+   "address": "0x683f71521cf4c4fb90e1fffe82576d8b421076c5",
+   "chain": "elysium",
+   "symbol": "ESKER",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.8023946104836,
+   "ageMinutes": 42
+  },
+  {
+   "address": "0x3a4ce955d6ddd1edb70f9355ce90b0adf59ea548",
+   "chain": "elysium",
+   "symbol": "REVERSE",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "wash",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3082.8022916443465,
+   "ageMinutes": 43
+  },
+  {
+   "address": "0x732c38304ad5ee6d7104206dec0fb54c16c2365e",
+   "chain": "elysium",
+   "symbol": "ELHOOKR",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 10393.047386696433,
+   "ageMinutes": 12
+  },
+  {
+   "address": "0x295c70733ea15a210e82005e7fdb610b484e32d1",
+   "chain": "elysium",
+   "symbol": "SCHRDINGER",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3096.472372796559,
+   "ageMinutes": 49
+  },
+  {
+   "address": "0x86f2f8c31e51ec5bba5d230d266b271a00dea53a",
+   "chain": "elysium",
+   "symbol": "ELYSCAN",
+   "score": 55,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "post-grad-drop",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 38819.525674183715,
+   "ageMinutes": 4991
+  },
+  {
+   "address": "0x682c4921acdcc49941bc5c8e2d42c5a7a4b15621",
+   "chain": "elysium",
+   "symbol": "MCAT",
+   "score": 0,
+   "level": "low",
+   "flags": [
+    "lookalike",
+    "unsealed",
+    "fee-to-holders"
+   ],
+   "mcap": 16425.469998536595,
+   "ageMinutes": 6054
+  },
+  {
+   "address": "0xceaf38a7e0eae9dd5ea30961c29fa946f35f7221",
+   "chain": "elysium",
+   "symbol": "LIHTORA",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 7901.4886936122575,
+   "ageMinutes": 13
+  },
+  {
+   "address": "0x7bd862a279d9f3ad97f1645540f45276fa051486",
+   "chain": "elysium",
+   "symbol": "EDEN",
+   "score": 60,
+   "level": "high",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "post-grad-drop",
+    "fee-recipient",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 23514.721155182055,
+   "ageMinutes": 518
+  },
+  {
+   "address": "0x617adb51cccedd46bedd010a0d0134afd5a48391",
+   "chain": "elysium",
+   "symbol": "GOONYSIUM",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3089.897201411842,
+   "ageMinutes": 54
+  },
+  {
+   "address": "0x7eb1a901702a7cdb60e034a30725572dfb763c46",
+   "chain": "elysium",
+   "symbol": "FLOW",
+   "score": 35,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "unsealed"
+   ],
+   "mcap": 3184.2108050042807,
+   "ageMinutes": 97
+  },
+  {
+   "address": "0xba2ecd6a647456d68781aafd0296341ddad8e8e2",
+   "chain": "elysium",
+   "symbol": "REPLICANTS",
+   "score": 30,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "lookalike",
+    "new",
+    "unsealed"
+   ],
+   "mcap": 3083.943628778438,
+   "ageMinutes": 38
+  },
+  {
+   "address": "0xfe704b66d9bafca7ee6d3355b33336cc1e9eb01e",
+   "chain": "elysium",
+   "symbol": "NOX",
+   "score": 40,
+   "level": "caution",
+   "flags": [
+    "fee",
+    "fee-mutable",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 7354.836436797054,
+   "ageMinutes": 126
+  },
+  {
+   "address": "0xd47a7951726eb53391168a9b4524d99bdda78142",
+   "chain": "elysium",
+   "symbol": "KM",
+   "score": 45,
+   "level": "caution",
+   "flags": [
+    "fee-mutable",
+    "serial",
+    "fee-recipient",
+    "lookalike",
+    "unsealed"
+   ],
+   "mcap": 167483.60842264627,
+   "ageMinutes": 1046
+  }
+ ]
+}

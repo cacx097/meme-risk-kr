@@ -1,5 +1,5 @@
 // Solana data: RugCheck (token safety report, no key) + DexScreener (price, volume, age).
-import { ApiError } from "./montra.js";
+import { ApiError, remember } from "./montra.js";
 
 export interface RugReport {
   mint: string;
@@ -49,7 +49,7 @@ async function get<T>(url: string, label: string): Promise<T> {
     // RugCheck answers 400 for strings that are not a token mint (wallets etc.): treat as not found.
     if (!res.ok) throw new ApiError(`${label} ${res.status}`, res.status === 400 ? 404 : res.status);
     const value = (await res.json()) as T;
-    cache.set(url, { at: Date.now(), value });
+    remember(cache, url, value);
     return value;
   }
 }

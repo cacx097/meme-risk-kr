@@ -2,6 +2,7 @@
 import { analyze } from "./analyze.js";
 import { montra, type MontraToken } from "./chains/montra.js";
 import { telegramSummary } from "./format.js";
+import { Inflight } from "./inflight.js";
 import type { Report } from "./score.js";
 import type { AlertSub, Store } from "./store.js";
 
@@ -27,7 +28,7 @@ export function worsened(prev: string | undefined, r: Report): boolean {
   return prev !== undefined && prev in LEVEL_RANK && LEVEL_RANK[r.level] > LEVEL_RANK[prev as Report["level"]];
 }
 
-export function startAlerts(store: Store, send: Send, webBase?: string) {
+export function startAlerts(store: Store, send: Send, webBase?: string, jobs = new Inflight()) {
   async function newTokens() {
     const subs = Object.entries(store.state.alerts);
     if (!subs.length) return;
@@ -58,8 +59,12 @@ export function startAlerts(store: Store, send: Send, webBase?: string) {
     store.save();
   }
 
+  // Each round runs inside `jobs` so shutdown waits for it; after shutdown starts, no new round begins.
   const loop = (fn: () => Promise<void>, ms: number) => {
-    const run = () => fn().catch((e) => console.error("alert loop", (e as Error).message)).finally(() => setTimeout(run, ms));
+    const run = () => {
+      if (jobs.closed) return;
+      jobs.run(fn).catch((e) => console.error("alert loop", (e as Error).message)).finally(() => setTimeout(run, ms));
+    };
     setTimeout(run, 5_000);
   };
   loop(newTokens, 60_000);

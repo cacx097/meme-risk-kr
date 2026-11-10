@@ -19,9 +19,13 @@
 - 서버 봇 1:1·그룹 동작 사용자 확인 완료. Railway Compute 한도 $10, 알림 $5.
 - Solana 지원 완료: `src/chains/solana.ts`(RugCheck + DexScreener), `src/score-solana.ts`. 테스트 20개 통과.
 
+- 안정성 보강(2026-11-10): 동시 처리(@grammyjs/runner), 그룹 같은 주소 10분 1회 답변, 종료 시 진행 중 작업 대기 후 저장, 상태 파일 안전 저장, 캐시 정리. 테스트 25개.
+- 사전 검증: `validation/forward-2026-11-10-1421.json`(116개 점수 기록). 11/12 14:21 UTC 이후 `npx tsx scripts/forward-test.ts eval validation/forward-2026-11-10-1421.json`.
+- 그랜트: Superteam 지역 그랜트는 전부 일시 중지(11/10 API 확인). Solana Foundation 표준 그랜트로 방향을 바꿨다. 초안은 `private/grant-solana-foundation.md`(git 제외).
+
 ## 다음
-1. Superteam Instagrant 신청서 초안 (블록 5 나머지).
-2. Base 지원 (블록 6).
+1. 11/12 사전 검증 평가, 결과를 그랜트 초안에 반영.
+2. Base 지원 (블록 6): DexScreener + GoPlus + Honeypot.is(둘 다 키 없이 동작 확인).
 
 ## Project rules
 - 읽기 전용이다. 지갑 키와 매매 기능은 넣지 않는다. 투자 권유 문구를 쓰지 않고 안내 문구를 고정한다.

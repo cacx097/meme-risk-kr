@@ -41,6 +41,13 @@ export class ApiError extends Error {
 
 const cache = new Map<string, { at: number; value: unknown }>();
 
+/** Cache a response; drop expired entries once the map gets big so memory stays flat on a long-running server. */
+export function remember(map: Map<string, { at: number; value: unknown }>, key: string, value: unknown, ttl = TTL_MS) {
+  const now = Date.now();
+  if (map.size >= 1_000) for (const [k, v] of map) if (now - v.at >= ttl) map.delete(k);
+  map.set(key, { at: now, value });
+}
+
 async function get<T>(path: string): Promise<T> {
   const hit = cache.get(path);
   if (hit && Date.now() - hit.at < TTL_MS) return hit.value as T;
@@ -53,7 +60,7 @@ async function get<T>(path: string): Promise<T> {
     }
     if (!res.ok) throw new ApiError(`Montra API ${res.status} for ${path}`, res.status);
     const value = (await res.json()) as T;
-    cache.set(path, { at: Date.now(), value });
+    remember(cache, path, value);
     return value;
   }
 }

@@ -1,5 +1,5 @@
 // Tiny JSON-file state: usage counters (grant KPIs), watchlists and alert subscriptions.
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
 export interface AlertSub {
@@ -31,8 +31,12 @@ export class Store {
     if (file) {
       try {
         this.state = { ...empty(), ...JSON.parse(readFileSync(file, "utf8")) };
-      } catch {
-        // first run or unreadable file: start empty
+      } catch (e) {
+        // First run: start empty. Unreadable file: keep a copy instead of silently overwriting the counters.
+        if ((e as NodeJS.ErrnoException).code !== "ENOENT") {
+          console.error("state file unreadable, kept a copy:", (e as Error).message);
+          copyFileSync(file, `${file}.bad-${Date.now()}`);
+        }
       }
     }
   }
@@ -40,8 +44,14 @@ export class Store {
   touchChat(chatId: number, isGroup: boolean) {
     const list = isGroup ? this.state.groups : this.state.users;
     const id = String(chatId);
-    if (!list.includes(id)) list.push(id);
+    if (list.includes(id)) return;
+    list.push(id);
     this.save();
+  }
+
+  isWatched(address: string): boolean {
+    const a = addrKey(address);
+    return Object.values(this.state.watches).some((list) => list.includes(a));
   }
 
   countCheck() {
@@ -81,6 +91,8 @@ export class Store {
     this.timer = null;
     if (!this.file) return;
     mkdirSync(dirname(this.file), { recursive: true });
-    writeFileSync(this.file, JSON.stringify(this.state));
+    // Write a temp file, then swap it in: a crash mid-write must not leave a half file (which would load as empty).
+    writeFileSync(this.file + ".tmp", JSON.stringify(this.state));
+    renameSync(this.file + ".tmp", this.file);
   }
 }

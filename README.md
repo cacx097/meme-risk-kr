@@ -14,6 +14,8 @@ npm run check -- 0x토큰주소       # 명령줄 검사
 npm start                        # 웹(기본 http://localhost:8787), 토큰이 있으면 봇도 실행
 npx tsx scripts/validate.ts      # 실제 졸업 토큰으로 점수 검증 (Elysium)
 npx tsx scripts/validate-solana.ts  # 실제 토큰으로 점수 검증 (Solana)
+npx tsx scripts/forward-test.ts snap               # 지금 점수를 기록 (validation/ 에 저장, 커밋)
+npx tsx scripts/forward-test.ts eval validation/forward-....json  # 48시간 뒤 결과와 비교
 ```
 
 환경 변수:
@@ -25,7 +27,7 @@ npx tsx scripts/validate-solana.ts  # 실제 토큰으로 점수 검증 (Solana)
 
 ## 서버에 올리기 (Railway)
 1. Railway에서 이 저장소로 새 서비스를 만든다. 시작 명령은 `npm start`(자동 인식).
-2. Variables에 `TELEGRAM_BOT_TOKEN`, `BOT_USERNAME`, `DATA_FILE=/data/state.json`을 넣는다.
+2. Variables에 `TELEGRAM_BOT_TOKEN`, `BOT_USERNAME`, `DATA_FILE=/data/state.json`, `RAILWAY_DEPLOYMENT_DRAINING_SECONDS=10`을 넣는다. 마지막 값은 다시 배포할 때 이전 봇이 하던 답장을 마치고 저장할 시간을 줍니다(Railway 기본값은 0초).
 3. Volume을 `/data`에 붙인다. 이렇게 해야 다시 배포해도 사용 통계와 알림 설정이 남는다.
 4. 같은 봇 토큰으로 두 곳에서 동시에 실행하지 않는다. 텔레그램이 한 곳만 허용하므로 PC에서 켠 봇은 먼저 끈다.
 
